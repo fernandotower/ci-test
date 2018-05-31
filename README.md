@@ -1,4 +1,4 @@
-# Integración Continua (CI) con drone sobre AWS ECS
+# Integración Continua (CI) con Drone sobre AWS ECS
 
 Desplegando Drone en AWS Elactic Container Service (ECS);  launch-type EC2
 
