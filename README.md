@@ -1,5 +1,6 @@
-# ci-test
-Desplegar Drone en ECS EC2
+# Integración Continua (CI) con drone sobre AWS ECS
+
+Desplegando Drone en AWS Elactic Container Service (ECS);  launch-type EC2
 
 1. Instalando ecs-cli en linux
 
