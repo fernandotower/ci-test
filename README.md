@@ -20,7 +20,7 @@ ecs-cli configure --cluster drone --region us-east-1 --default-launch-type EC2 -
 ecs-cli up --keypair id_rsa --capability-iam --size 2 --instance-type t2.medium --cluster-config drone
 ```
 
-5. Create el archivo docker-compose.yml
+5. Crear el archivo docker-compose.yml, el archivo se encuentra en este repositorio
 
 6. Desplegar el archivo compose en el cluster
 
