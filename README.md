@@ -13,7 +13,7 @@ sudo curl -o /usr/local/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/ecs-
 ```
 ecs-cli configure profile --profile-name default --access-key $AWS_ACCESS_KEY_ID --secret-key $AWS_SECRET_ACCESS_KEY
 ```
-    
+
 3. Creando configuración para el cluster
 
 ```
@@ -35,5 +35,24 @@ ecs-cli up --keypair id_rsa --capability-iam --size 2 --instance-type t2.medium 
 ```
 ecs-cli compose --file docker-compose.yml up --create-log-groups --cluster-config drone
 ```
+Esto crea el contenedor con docker-server y docker-agent
 
-7.
+Para verificar que se están ejecutando
+
+```
+ecs-cli ps
+```
+
+7. Creando el servicio
+
+Primero detener los contanedores que se están ejecutando
+
+```
+ecs-cli compose --file docker-compose.yml down --cluster-config drone
+
+```
+
+Y luego se crea el servicio
+```
+ecs-cli compose --file docker-compose.yml service up --cluster-config drone
+```
