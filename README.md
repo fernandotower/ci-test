@@ -1,7 +1,34 @@
-# Integración Continua (CI) con Drone sobre AWS ECS
+# Integración Continua (CI) con Drone sobre AWS
 
-Desplegando Drone en AWS Elactic Container Service (ECS);  launch-type EC2
-
+1. Creando una istancia EC2
+    AMI centos 7
+    Con Ip pública
+ 
+2. En github 
+    Crear un nuevo OAuth Apps en la organización
+        Settings->OAuth Apps->New OAuth Apps
+    
+    
+2. En la instancia EC2
+    Agregar las siguientes líneas al archivo /home/centos/.bashrc
+    
+    ```
+    #variables tomadas de github
+    export DRONE_GITHUB_CLIENT=Client ID
+    export DRONE_GITHUB_SECRET=Client Secret
+    export DRONE_HOST=http://example.com
+    export DRONE_SECRET=creado_en_drone_yml
+    #variables tomadas del la interfaz gráfica de drone, settings->token
+    export DRONE_SERVER=http://example.com
+    export DRONE_TOKEN=obtenido_de_interfaz_done
+    ```
+    
+    Instalar droker
+    Instalar docker-compose
+    crear archivo docker-compose.yml para drone
+    Lanzar los contenedores del docker-compose.yml
+    Verificar en el navegador
+    
 1. Instalando ecs-cli en linux
 
 ```
