@@ -25,7 +25,6 @@ TELEGRAM_TOKEN="XXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 #buscar los repositorio activos
 repositorios=`drone repo ls`
 echo repositorios
-#secrets dockerhub: secrets: [ docker_username, docker_password ]
 for repositorio in $repositorios
 do
    #borrar todos los secretos
@@ -42,5 +41,5 @@ do
    drone secret add --image=plugins/s3 --repository $repositorio -name=AWS_SECRET_ACCESS_KEY --value=$AWS_SECRET_ACCESS_KEY
    drone secret add --image=appleboy/drone-telegram --repository $repositorio -name=TELEGRAM_TO --value=$TELEGRAM_TO
    drone secret add --image=appleboy/drone-telegram --repository $repositorio -name=TELEGRAM_TOKEN --value=$TELEGRAM_TOKEN
-drone secret ls udistrital/personas_crud
+drone secret ls $repositorio
 done
